@@ -8,5 +8,8 @@
     "valid-jsdoc": "off",
     "max-len": "off"
   },
-  "extends": ["eslint:recommended", "google"]
+  "extends": ["eslint:recommended", "google"],
+  "parserOptions": {
+    "sourceType": "module"
+  }
 }

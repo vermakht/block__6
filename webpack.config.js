@@ -1,138 +1,142 @@
 const path = require('path');
-// Подключение необходимых плагинов для работы
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const ESLintPlugin = require('eslint-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const {ProgressPlugin} = require('webpack');
 
-/* Отслеживание реэима сборки проекта*/
-const isProd = process.env.NODE_ENV === 'production';
-const isDev = !isProd;
+// Отслеживание сборки проекта
+const mode = process.env.NODE_ENV || 'development';
+const devMode = mode === 'development';
 
-// Отлеживаем режим и заменяем названия соответвенно
-const filename = (ext) => isDev ? `bundle.${ext}` : `bundle.[hash]${ext}`;
+// Проверка браузера, в котором открыли сайт
+const target = devMode ? 'web' : 'browserslist';
 
-// Редактор определенных форматов
-const myEslintOptions = {
-  extensions: [`js`, `jsx`, `ts`],
-  exclude: [`node_modules`],
-};
+// Карты исходных файлов
+const devtool = devMode ? 'eval-cheap-module-source-map' : undefined;
 
 module.exports = {
-  // Расположение основной папки проекта
-  context: path.resolve(__dirname, 'src'),
-  mode: 'development',
-  entry: ['@babel/polyfill', './js/index.js'],
-  // Выввод собронного проекта с определнным названием и в указанную папку
-  output: {
-    filename: filename('js'),
-    path: path.resolve(__dirname, 'dist'),
-  },
-  resolve: {
-    extensions: ['.js'],
-    // Сокращение относительного пути до файла.
-    alias: {
-      '@': path.resolve(__dirname, 'src'),
-      '@core': path.resolve(__dirname, 'src/core'),
-    },
-  },
-  // Карты исходных файлов
-  devtool: isDev ? 'eval-cheap-module-source-map' : false,
   // Динамическое обнровление старницы при внесении изменений
+  mode,
+  target,
+  devtool,
   devServer: {
-    port: 5000,
-    hot: isDev,
+    // Каталог, откуда будет раздаваться статика
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
+    port: 3000,
+    hot: true,
   },
-  performance: {
-    hints: false,
-    maxEntrypointSize: 512000,
-    maxAssetSize: 512000,
+  // Входной файл
+  entry: path.resolve(__dirname, 'src', 'index.js'),
+  // Выходной файл собранного проекта
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    clean: true,
+    filename: '[name].[contenthash].js',
+    assetModuleFilename: 'assets/[name][ext]',
   },
   plugins: [
-    // Подключаем новый
-    new ESLintPlugin(myEslintOptions),
+    // При сборке этот плагин будет отображать прогресс в консоли:
+    new ProgressPlugin(),
     // Очищает от ненужных файлом и оставляет только актуальные
     new CleanWebpackPlugin(),
     // Подключаем файл html, стили и скрипты встроятся автоматически
     new HtmlWebpackPlugin({
-      template: 'index.html',
-      inject: true,
+      template: path.resolve(__dirname, 'src', 'index.html'),
       minify: {
-        /* Удаление комментариев*/
-        removeComments: isProd,
-        /* Удаление пробелов*/
-        collapseWhitespace: isProd,
+        // Удаление комментариеы в режиме production
+        removeComments: mode,
+        // Удаление пробелов в режиме production
+        collapseWhitespace: mode,
       },
     }),
-    // Копируем картинки
-    new CopyPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, 'src/img'),
-          to: path.resolve(__dirname, 'dist/img'),
-        },
-      ],
-    }),
-    // Кладем стили в отдельный файлик
     new MiniCssExtractPlugin({
-      filename: filename('css'),
+      filename: '[name].[contenthash].css',
     }),
   ],
-  /* Инструмент работы с предпроцессами.
-      Компилируем SCSS в CSS*/
   module: {
     rules: [
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.html$/i,
+        loader: 'html-loader',
+      },
+      {
+        test: /\.(c|sa|sc)ss$/i,
         use: [
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
           {
-            loader: 'MiniCssExtractPlugin.loader',
+            loader: 'postcss-loader',
             options: {
-              hmr: isDev,
-              reloadAll: true,
+              postcssOptions: {
+                plugins: [require('postcss-preset-env')],
+              },
             },
           },
-          'css-loader',
-          'sass-loader',
+          'group-css-media-queries-loader',
+          {
+            loader: 'resolve-url-loader',
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
         ],
-
+      },
+      // Подключаем шрифты из css
+      {
+        test: /\.(eot|ttf|woff|woff2)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name][ext]',
+        },
+      },
+      // Подключаем картинки из css
+      {
+        test: /\.(jpe?g|png|webp|svg)$/i,
+        use: devMode ?
+          [] :
+          [
+            {
+              loader: 'image-webpack-loader',
+              options: {
+                mozjpeg: {
+                  progressive: true,
+                },
+                optipng: {
+                  enabled: false,
+                },
+                pngquant: {
+                  quality: [0.65, 0.9],
+                  speed: 4,
+                },
+                gifsicle: {
+                  interlaced: false,
+                },
+                webp: {
+                  quality: 75,
+                },
+              },
+            },
+          ],
+        type: 'asset/resource',
       },
       /** Добавляем инстурмент для изменения js под старые браузере с
        * использование пресета.
        * Транспилируем js с babel.
        */
       {
-        test: /\.(?:js|mjs|cjs)$/,
-        exclude: /node_modules/,
-        include: path.resolve(__dirname, 'src/js'),
+        test: /\.m?js$/i,
+        exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: [
-              ['@babel/preset-env', {targets: 'defaults'}],
-            ],
-            sourceType: 'unambiguous',
+            presets: ['@babel/preset-env'],
           },
         },
-      },
-      // Подключаем шрифты из css
-      {
-        test: /\.(eot|ttf|woff|woff2)$/,
-        use: [
-          {
-            loader: 'file-loader?name=./fonts/[name].[ext]',
-          },
-        ],
-      },
-      {
-        // Подключаем картинки из css
-        test: /\.(svg|png|jpg|jpeg|webp)$/,
-        use: [
-          {
-            loader: 'file-loader?name=./static/[name].[ext]',
-          },
-        ],
       },
     ],
   },
