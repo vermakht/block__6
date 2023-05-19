@@ -1,4 +1,5 @@
-@import 'reset-css';
-@import 'style/fonts';
-@import 'style/var';
-@import 'style/style';
+@import "style/less";
+@import "style/blocks/header";
+@import "style/blocks/aside";
+@import "style/blocks/main";
+@import "style/blocks/footer";

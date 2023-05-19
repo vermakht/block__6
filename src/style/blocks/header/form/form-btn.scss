@@ -1,0 +1,25 @@
+.btn-sent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 136px;
+  height: 32px;
+  border-radius: 16px;
+  background-color: $btn_sent;
+
+  position: relative;
+  left: 60%;
+
+  &__text {
+    font-size: 12px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: $btn_sent_text;
+  }
+
+  &__img {
+    width: 24px;
+    height: 24px;
+  }
+}

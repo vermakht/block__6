@@ -1,0 +1,19 @@
+@include tablet {
+  .wrapper {
+    grid-template-rows: 88px minmax(0, 1fr) 81px; /* Высота шапки, основной части и футера */
+  }
+}
+
+@include desktop {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 320px 1fr; /* Ширина боковой панели и основной части */
+    grid-template-rows: 88px minmax(0, 1fr) 81px; /* Высота шапки, основной части и футера */
+    grid-template-areas:
+    "aside header"
+    "aside main"
+    "aside footer";
+    min-height: 100vh; /* Минимальная высота контейнера для растяжения на всю высоту видимой области */
+    max-width: 100%;
+  }
+}

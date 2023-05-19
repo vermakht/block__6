@@ -1,0 +1,12 @@
+.title {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-items: center;
+
+  &__text {
+    line-height: 32px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}

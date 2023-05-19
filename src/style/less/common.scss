@@ -1,0 +1,78 @@
+/*Назначение значений для единого стиля*/
+button {
+  font-family: inherit;
+  line-height: inherit;
+  color: inherit;
+  padding: inherit;
+  background-color: inherit;
+  border: none;
+  /*Размер основных кнопок, которые есть в макете, остальные переназначу*/
+  width: 40px;
+  height: 40px;
+}
+
+*:focus-visible {
+  outline: auto 2px #DCDBDBFF;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input {
+  padding: 0;
+}
+
+/*Оформление содержимого*/
+body,
+html {
+  font-family: 'TTLakes', serif;
+  line-height: 18px;
+  font-size: 16px;
+  color: $text;
+  background-color: $back;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr; /* Ширина основной части */
+  grid-template-rows: 88px minmax(0, 1fr) 129px; /* Высота шапки, основной части и футера */
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  min-height: 100vh; /* Минимальная высота контейнера для растяжения на всю высоту видимой области */
+  overflow: hidden;
+}
+
+.container {
+  padding: 0 16px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.divider {
+  width: 2px;
+  height: 32px;
+  border-radius: 1px;
+  background-color: $divider;
+}
+
+.line {
+  background: $line;
+  border-radius: 2px;
+  height: 40px;
+  width: 4px;
+}
+
+.overlay {
+  position: fixed;
+  opacity: 96.05%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $overlay;
+}

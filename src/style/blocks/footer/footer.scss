@@ -1,0 +1,24 @@
+.footer {
+  grid-area: footer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: solid 1px $footer;
+
+  &__text {
+    text-align: center;
+    line-height: 16px;
+    font-size: 14px;
+    color: $footer__text;
+    opacity: 0.72;
+  }
+
+  &__text:first-child {
+    padding-top: 16px;
+  }
+
+  & .container > * {
+    margin-bottom: 16px;
+  }
+}

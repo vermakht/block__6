@@ -1,31 +1,208 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang='ru'>
 <head>
-  <meta charset="UTF-8">
+  <meta charset='UTF-8'>
   <!--Адаптивный дизайн-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <!--Иконка вкладки браузера-->
-  <link rel="icon" type="image/svg" href="img/favicon.svg">
+  <link rel='icon' type='image/svg' href='img/favicon.svg'>
   <!--Заголовок вкладки браузера-->
   <title>Услуги и сервисы</title>
   <!--Данные SEO-->
-  <meta name="keywords" content="Ремонт, сервисный центр, Dell, dell, ноутбук Dell">
-  <meta name="description" content="Сервисный центр по ремонту техники Dell">
+  <meta name='keywords' content='Ремонт, сервисный центр, Dell, dell, ноутбук Dell'>
+  <meta name='description' content='Сервисный центр по ремонту техники Dell'>
 
 </head>
 <body>
-  <header>
-    <h1>Webpack</h1>
-  </header>
+  <div class='wrapper'>
+    <aside class='aside'>
+      <div class='aside__header'>
+        <a class='aside__header-logo logo' href='#'>
+          <img class='logo__img' src='img/favicon.svg' alt='СPS'>
+        </a>
+        <button class='aside__header-search search'>
+          <img class='search__img' src='img/ic_search.svg' alt='Поиск'>
+        </button>
+      </div>
+      <nav class='aside__nav nav'>
+        <ul class='nav__list'>
+          <li class='nav__item'>
+            <div class='nav__line'></div>
+            <button class='nav__btn'>Ремонт техники</button>
+          </li>
+          <li class='nav__item'>
+            <div class='nav__line'></div>
+            <button class='nav__btn'>Услуги и сервисы</button>
+          </li>
+          <li class='nav__item'>
+            <div class='nav__line'></div>
+            <button class='nav__btn'>Корпоративным клиентам</button>
+          </li>
+          <li class='nav__item'>
+            <div class='nav__line'></div>
+            <button class='nav__btn'>Продавцам техники</button>
+          </li>
+          <li class='nav__item'>
+            <div class='nav__line'></div>
+            <button class='nav__btn'>Партнерам</button>
+          </li>
+          <li class='nav__item'>
+            <div class='nav__line'></div>
+            <button class='nav__btn'>Производителям</button>
+          </li>
+          <li class='nav__item'>
+            <div class='nav__line'></div>
+            <button class='nav__btn'>Наши сервисные центры</button>
+          </li>
+          <li class='nav__item'>
+            <div class='nav__line'></div>
+            <button class='nav__btn'>Контакты</button>
+          </li>
+        </ul>
+      </nav>
+      <article class='aside__footer'>
+        <div class='aside__footer-btn'>
+          <button class='call'>
+            <img class='call__img' src='img/ic_call.svg' alt='Звонок'>
+          </button>
+          <button class='chat'>
+            <img class='chat__img' src='img/ic_chat.svg' alt='Чат'>
+          </button>
+          <button class='profile'>
+            <img class='profile__img' src='img/ic_profile.svg' alt='Профиль'>
+          </button>
+        </div>
+        <section class='aside__footer-contact'>
+          <a class="aside__footer-mail" href='mailto:mail@cps.com'>mail@cps.com</a>
+          <a class="aside__footer-tel" href="tel:88008908900">8 800 890 8900</a>
+        </section>
+        <section class='aside__footer-lang'>
+          <a class='aside__footer-lang-ru aside__footer-lang--active' href='#'>RU</a>
+          <a class='aside__footer-lang-en' href='#'>EN</a>
+          <a class='aside__footer-lang-ch' href='#'>CH</a>
+        </section>
+      </article>
+    </aside>
 
-  <main>
-    <div class='wrapper'>
+    <header class='header'>
+      <div class='container'>
+        <div class='header__container'>
+          <div class='header__block--left'>
+              <button class='header__btn menu-btn'>
+                <span></span>
+              </button>
+              <div class='header__divider-desktop divider'></div>
+              <a class='header__logo logo' href='#'>
+                <img class='logo__img' src='img/favicon.svg' alt='СPS'>
+              </a>
+            </div>
+          <div class='header__block--right'>
+              <button class='header__call call' type='button'>
+                <img class='call__img' src='img/ic_call.svg' alt='Звонок'>
+              </button>
+              <button class='header__chat chat'>
+                <img class='chat__img' src='img/ic_chat.svg' alt='Чат'>
+              </button>
+              <button class='header__profile profile'>
+                <img class='profile__img' src='img/ic_profile.svg' alt='Профиль'>
+              </button>
+              <div class='header__divider-mobile divider'></div>
 
+              <button class='header__request request'>
+                <span class='request__text'>Оставить заявку</span>
+                <img class='request__img' src='/src/img/ic_repair.svg' alt='Обратная связь'>
+              </button>
+              <button class='header__checkstatus checkstatus'>
+                <span class='checkstatus__text'>Статус ремонта</span>
+                <img class='checkstatus__img' src='img/ic_checkstatus.svg' alt='Статус ремонта'>
+              </button>
+
+              <article class='feedback'>
+                <div class='feedback__inner-desktop'>
+                  <button class='feedback__btn-desktop'>
+                    <img class='feedback__img' src='img/ic_close.svg' alt='Закрыть'>
+                  </button>
+                </div>
+                <div class='feedback__inner-mobile'>
+                  <button class='feedback__btn-mobile'>
+                    <img class='feedback__img' src='img/ic_close.svg' alt='Закрыть'>
+                  </button>
+                  <section class='feedback__title title'>
+                    <div class='feedback-title__underline line'></div>
+                    <span class='title__text'>Обратная связь</span>
+                  </section>
+                  <form class='feedback__form'>
+                    <label class='feedback__item'>
+                      <input class='feedback__input' type='text' placeholder='Имя' required>
+                    </label>
+                    <label class='feedback__item'>
+                      <input class='feedback__input' type='tel' placeholder='Телефон'>
+                    </label>
+                    <label class='feedback__item'>
+                      <input class='feedback__input' type='email' placeholder='Электронная почта' required>
+                    </label>
+                    <label class='feedback__item'>
+                      <textarea class='feedback__textarea' id='message' placeholder='Сообщение' required></textarea>
+                    </label>
+                    <section class='feedback__item feedback__text'>
+                      Нажимая “отправить”, вы даете согласие на <a class='feedback__link' href='#'>обработку персональных данных</a> и соглашаетесь с нашей <a class='feedback__link' href='#'>политикой конфиденциальности</a>.
+                    </section>
+                    <button class='feedback__btn-sent btn-sent' type='submit'>
+                      <span class='btn-sent__text'>Отправить</span>
+                      <img class='btn-sent__img' src='/src/img/ic_goside.svg' alt='Отправить'>
+                    </button>
+                  </form>
+                </div>
+              </article>
+
+              <article class='checkstatus-call'>
+                <div class='checkstatus-call__inner-desktop'>
+                  <button class='checkstatus-call__btn-desktop'>
+                    <img class='checkstatus-call__img' src='img/ic_close.svg' alt='Закрыть'>
+                  </button>
+                </div>
+                <div class='checkstatus-call__inner-mobile'>
+                  <button class='checkstatus-call__btn-mobile'>
+                    <img class='checkstatus-call__img' src='img/ic_close.svg' alt='Закрыть'>
+                  </button>
+                  <section class='checkstatus-call__title title'>
+                    <span class='line'></span>
+                    <span class='title__text'>Заказать звонок</span>
+                  </section>
+                  <form class='checkstatus-call__form'>
+                    <label class='checkstatus-call__item'>
+                      <input class='checkstatus-call__input' type='tel' placeholder='Телефон' required>
+                    </label>
+                    <section class='checkstatus-call__item checkstatus-call__text'>
+                      Нажимая “отправить”, вы даете согласие на <a class='checkstatus-call__link' href='#'>обработку персональных данных</a> и соглашаетесь с нашей <a class='checkstatus-call__link' href='#'>политикой конфиденциальности</a>.
+                    </section>
+                    <button class='checkstatus-call__btn-sent btn-sent' type='submit'>
+                      <span class='btn-sent__text'>Отправить</span>
+                      <img class='btn-sent__img' src='/src/img/ic_goside.svg' alt='Отправить'>
+                    </button>
+                  </form>
+                </div>
+              </article>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class='main'>
+      <div class='container'>
+      </div>
+    </main>
+
+    <footer class='footer'>
+      <div class='container'>
+        <article class='footer__copyright'>
+          <p class='footer__text'>© 2019 CPS</p>
+          <p class='footer__text'>Разработано командой Apesong</p>
+        </article>
+        <article class='footer__text'>Политика конфиденциальности</article>
+        <article class='footer__text'>Информация, размещенная на данной странице, не является публичной офертой</article>
+        </div>
+    </footer>
     </div>
-  </main>
-
-  <footer>
-
-  </footer>
 </body>
 </html>

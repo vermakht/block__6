@@ -1,0 +1,83 @@
+.aside {
+  display: none;
+  background-color: $aside_back;
+  box-shadow: $aside_shadow;
+
+  &--show {
+    z-index: 2;
+    position: absolute;
+    display: grid;
+    grid-template-columns: 320px;
+    grid-template-rows: 88px minmax(0, 1fr) auto;
+    grid-template-areas:
+    "aside__header"
+    "aside__nav"
+    "aside__footer";
+    min-height: 676px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+  }
+
+  &__header-logo {
+    position: relative;
+    left: 22.5%;
+  }
+
+  &__header-search {
+    position: relative;
+    left: 154px;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__footer > * {
+    margin-bottom: 16px; /* отступ снизу для каждого блока */
+    margin-left: 16px;
+  }
+
+  &__footer > *:last-child {
+    margin-bottom: 32px; /* особый отступ снизу для последнего блока */
+  }
+
+  &__footer-btn {
+    display: grid;
+    grid-template-columns: repeat(3, 40px);
+    gap: 16px; /* отступ между кнопками */
+  }
+
+  &__footer-contact {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__footer-mail {
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 12px;
+  }
+
+  &__footer-tel {
+    font-weight: 900;
+    line-height: 32px;
+    font-size: 24px;
+  }
+
+  &__footer-lang {
+    line-height: 24px;
+    font-weight: 600;
+  }
+
+  &__footer-lang > * {
+    margin-right: 7px;
+  }
+
+  &__footer-lang--active {
+    color: $footer-lang--active;
+  }
+}

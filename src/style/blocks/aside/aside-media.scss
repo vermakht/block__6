@@ -1,0 +1,25 @@
+@include tablet {
+  .aside {
+    box-shadow: $aside_shadow;
+    min-height: 100%;
+  }
+}
+
+@include desktop {
+  .aside {
+    grid-area: aside;
+    display: grid;
+    grid-template-columns: 320px;
+    grid-template-rows: 88px minmax(0, 1fr) auto;
+    grid-template-areas:
+    "aside__header"
+    "aside__nav"
+    "aside__footer";
+    box-shadow: none;
+
+    &__header-logo {
+      position: relative;
+      left: 16px;
+    }
+  }
+}

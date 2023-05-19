@@ -1,0 +1,36 @@
+.nav {
+
+  &__list {
+    line-height: 24px;
+  }
+
+  &__item {
+    gap: 16px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  &__line {
+    opacity: 0;
+    background: $line;
+    border-radius: 2px;
+    height: 40px;
+    width: 4px;
+  }
+
+  &__line--active {
+    opacity: 1;
+  }
+
+  &__btn {
+    font-weight: 500;
+    text-align: start;
+    width: 200px;
+    height: 24px;
+  }
+
+  &__btn--active {
+    color: $nav_text_active;
+  }
+}
