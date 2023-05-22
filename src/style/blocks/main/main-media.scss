@@ -1,0 +1,20 @@
+@include tablet {
+  .main {
+
+    &__content {
+      grid-template-columns: minmax(320px, 1fr) minmax(320px, 1fr);
+    }
+  }
+}
+
+@include desktop {
+  .main {
+
+    &__title {
+      position: absolute;
+      top: 0;
+    }
+  }
+}
+
+

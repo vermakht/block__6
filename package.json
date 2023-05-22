@@ -57,9 +57,9 @@
     "webpack-dev-server": "^4.13.3"
   },
   "dependencies": {
-    "reset-css": "^5.0.1"
+    "reset-css": "^5.0.1",
+    "swiper": "^9.3.2"
   },
-
   "prettier": {
     "singleQuote": true
   }

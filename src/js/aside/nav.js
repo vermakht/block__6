@@ -38,4 +38,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
       line.classList.remove('nav__line--active');
     });
   }
+  // Добавляем класс активной кнопке при загрузке страницы
+  navBtnes[0].classList.add('nav__btn--active');
+  navLine[0].classList.add('nav__line--active');
 });
