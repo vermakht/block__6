@@ -1,0 +1,52 @@
+.slider {
+  position: relative;
+  margin-top: 16px;
+}
+
+.slide-container {
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+.slides {
+  display: inline-flex;
+  gap: 16px;
+  margin-left: 16px;
+}
+
+.slide {
+  width: 240px;
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  padding-inline: 16px;
+
+  background: #FFFFFF;
+  border: 1px solid #EAEAEA;
+  border-radius: 6px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #DDDDDD;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.dot--active {
+  background-color: #B5B6BC;
+}
+
+.slide-container::-webkit-scrollbar { /* chrome based */
+  width: 0;  /* ширина scrollbar */
+}

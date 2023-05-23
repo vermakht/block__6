@@ -1,0 +1,9 @@
+@include tablet {
+  .slides {
+    flex-wrap: wrap;
+  }
+
+  .navigation {
+    display: none;
+  }
+}

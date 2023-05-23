@@ -1,35 +1,6 @@
 .brands {
 
-  &__header {
-    display: flex;
-    align-items: center;
-    justify-items: start;
-    height: 88px;
-    background: $brands__header-background;
-    border-top: 1px solid $brands__header-border;
+  &--mob {
+    display: none;
   }
-
-  &__title {
-    text-transform: uppercase;
-    margin-left: 16px;
-    line-height: 24px;
-    color: $brands__title-color;
-  }
-
-  &__slider {
-    margin-left: 16px;
-  }
-
-  &__cards {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 60px;
-    width: 240px;
-    height: 72px;
-    background: $brands__cards-background;
-    border: 1px solid $brands__cards-border;
-    border-radius: 6px;
-  }
-
 }

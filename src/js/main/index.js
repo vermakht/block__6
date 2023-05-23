@@ -1,2 +1,4 @@
 import './services';
-import './swiper';
+import './slider';
+import './gadget';
+import './price';

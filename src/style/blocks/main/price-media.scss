@@ -1,0 +1,12 @@
+@include tablet {
+  .price {
+
+    &__btn-more {
+      width: 300px;
+    }
+
+    &__navigation {
+      display: none;
+    }
+  }
+}
