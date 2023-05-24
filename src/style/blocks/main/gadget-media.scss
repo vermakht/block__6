@@ -7,6 +7,11 @@
 
     &--mob {
       display: flex;
+      margin-left: 16px;
+    }
+
+    &--dev {
+      display: none;
     }
   }
 }

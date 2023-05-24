@@ -18,10 +18,12 @@
     column-gap: 36px;
     row-gap: 16px;
     grid-template-columns: minmax(0, 1fr);
+    margin-top: 16px;
   }
 
   &__text-desktop {
     margin-bottom: 16px;
+    display: none;
   }
 
   &__picture-img {
