@@ -1,0 +1,62 @@
+.menu-btn {
+  display: block;
+  position: relative;
+  background-color: $btn_back;
+  border-radius: 20px;
+  border: none;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: $header_back;
+    height: 2px;
+    border-radius: 2px;
+    left: 11px;
+    transition: 0.6s;
+  }
+
+  &::before {
+    top: 12px;
+    width: 18px;
+  }
+
+  &::after {
+    top: 26px;
+    width: 14px;
+  }
+
+  & span {
+    position: absolute;
+    background-color: $header_back;
+    height: 2px;
+    border-radius: 2px;
+    left: 11px;
+    top: 19px;
+    width: 10px;
+  }
+
+  &::after {
+    top: 26px;
+    width: 14px;
+  }
+
+  &--active {
+    z-index: 2;
+
+    &::before {
+      transform-origin: left top;
+      transform: translate(3px, 50%) rotate(45deg);
+    }
+
+    & span {
+      opacity: 0;
+    }
+
+    &::after {
+      transform-origin: left bottom;
+      width: 18px;
+      transform: translate(3px, -50%) rotate(-45deg);
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@include tablet {
+  .brands {
+
+    &--dek {
+      display: none;
+    }
+
+    &--mob {
+      display: flex;
+      margin-left: 16px;
+    }
+  }
+}

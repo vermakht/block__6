@@ -1,0 +1,17 @@
+@include tablet {
+  .gadget {
+
+    &__navigation {
+      display: none;
+    }
+
+    &--mob {
+      display: flex;
+      margin-left: 16px;
+    }
+
+    &--dev {
+      display: none;
+    }
+  }
+}

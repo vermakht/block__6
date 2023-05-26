@@ -1,0 +1,32 @@
+@include tablet {
+  .header {
+    &__chat,
+    &__call,
+    &__profile {
+      display: block;
+    }
+
+    &__divider-desktop {
+      display: block;
+    }
+  }
+}
+
+@include desktop {
+  .header {
+    background-color: $back;
+
+    &__divider-mobile,
+    &__chat,
+    &__call,
+    &__profile,
+    &__divider-desktop,
+    &__logo {
+      display: none;
+    }
+
+    &__block--right {
+      position: relative;
+    }
+  }
+}

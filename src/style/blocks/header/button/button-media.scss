@@ -1,0 +1,18 @@
+@include desktop {
+
+  .request,
+  .checkstatus {
+    width: 168px;
+    align-items: center;
+
+    &__text {
+      font-family: inherit;
+      display: inline-block;
+      flex-grow: 1;
+    }
+  }
+
+  .menu-btn {
+    display: none;
+  }
+}

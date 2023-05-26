@@ -1,0 +1,15 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "valid-jsdoc": "off",
+    "max-len": "off"
+  },
+  "extends": ["eslint:recommended", "google"],
+  "parserOptions": {
+    "sourceType": "module"
+  }
+}

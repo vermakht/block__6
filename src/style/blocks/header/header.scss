@@ -1,0 +1,37 @@
+.header {
+  min-width: 320px;
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  background-color: $header_back;
+
+  &__container {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+
+  &__block--left,
+  &__block--right {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__divider-mobile {
+    display: block;
+  }
+
+  &__divider-desktop {
+    display: none;
+  }
+
+  &__chat,
+  &__call,
+  &__profile {
+    display: none;
+  }
+}
+

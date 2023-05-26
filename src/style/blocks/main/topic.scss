@@ -1,0 +1,17 @@
+.topic {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-items: start;
+  height: 56px;
+  border-top: 1px solid #D9FFF5;
+  background: linear-gradient(270deg,  #FFFFFF 0%, #F8F8F8 98.61%);
+
+  &__title {
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #7E7E82;
+    margin-left: 16px;
+  }
+}

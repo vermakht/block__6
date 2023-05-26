@@ -1,0 +1,33 @@
+.main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+
+  &__title {
+    margin-top: 24px;
+  }
+
+  &__title-underline {
+    position: relative;
+    left: 0;
+  }
+
+  &__content {
+    display: grid;
+    column-gap: 36px;
+    row-gap: 16px;
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: 16px;
+  }
+
+  &__text-desktop {
+    margin-bottom: 16px;
+    display: none;
+  }
+
+  &__picture-img {
+    width: 100%;
+    object-fit: contain;
+  }
+}

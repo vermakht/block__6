@@ -1,0 +1,111 @@
+.price {
+
+  &__slider {
+    position: relative;
+    margin-top: 16px;
+  }
+
+  &__container {
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+
+  &__container::-webkit-scrollbar { /* chrome based */
+    width: 0;  /* ширина scrollbar */
+  }
+
+  &__slides {
+    display: inline-flex;
+    gap: 16px;
+    margin-left: 16px;
+  }
+
+  &__slide {
+    position: relative;
+    width: 260px;
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    border: 1px solid #EAEAEA;
+    border-radius: 6px;
+  }
+
+  &__slide > *:not(:last-child) {
+    margin-bottom: 16px;
+    margin-left: 16px;
+  }
+
+  &__slide-services:first-child {
+    margin-top: 16px;
+  }
+
+  &__slide-title {
+    font-size: 14px;
+    line-height: 16px;
+    color: #7E7E82;
+    opacity: 0.72;
+  }
+
+  &__slide-txt {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &__btn-sent {
+    width: 119px;
+    position: absolute;
+    left: 125px;
+    bottom: 16px;
+  }
+
+  &__txt {
+    max-width: 430px;
+    margin: 16px 0 16px 16px;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+  }
+
+  &__btn-more {
+    width: 192px;
+    height: 55px;
+    font-weight: 600;
+    text-align: left;
+    margin-left: 16px;
+  }
+
+  &__btn-text {
+    display: inline;
+    line-height: 24px;
+  }
+
+  &__btn-img {
+    vertical-align: middle;
+    margin-left: 5px;
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  &__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #DDDDDD;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+
+  &__dot--active {
+    background-color: #B5B6BC;
+  }
+
+  &__table {
+    display: none;
+  }
+}

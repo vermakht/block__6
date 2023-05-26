@@ -1,0 +1,26 @@
+@include tablet {
+  .footer {
+
+    & > .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    & .container > * {
+      margin: 0;
+    }
+
+    &__text {
+      text-align: start;
+      max-width: 218px;
+    }
+
+    &__text:last-child:not(&__copyright &__text) {
+      text-align: end;
+    }
+  }
+}
+
+@include desktop {
+
+}
