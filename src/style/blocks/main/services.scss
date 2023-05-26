@@ -8,12 +8,13 @@
   }
 
   &__item {
-    box-sizing: border-box;
+    box-sizing: content-box;
     flex: 0 0 auto;
     margin-top: 24px;
   }
 
   &__btn {
+    border: 2px solid transparent;
     transition: none;
     color: $services__btn-color;
     width: 100%;
@@ -21,6 +22,12 @@
   }
 
   &__btn--active {
+    background: $services__btn-background;
+    border: 2px solid $services__btn-border;
+    border-radius: 6px;
+  }
+
+  &__btn:hover {
     background: $services__btn-background;
     border: 2px solid $services__btn-border;
     border-radius: 6px;

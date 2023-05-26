@@ -5,8 +5,77 @@
       width: 300px;
     }
 
-    &__navigation {
+    &__slider {
       display: none;
+    }
+
+    &__table {
+      display: block;
+      overflow: visible;
+      border-collapse: collapse;
+      border-radius: 6px;
+      width: 100%;
+      max-width: 1056px;
+      margin-left: 16px;
+      margin-top: 31px;
+    }
+
+    &__line-title {
+      font-size: 14px;
+      line-height: 16px;
+      color: #7E7E82;
+      text-align: left;
+  }
+
+    &__cell-title {
+      background-color: transparent;
+      padding-left: 16px;
+      padding-bottom: 16px;
+    }
+
+    &__line {
+      padding-right: 16px;
+      text-align: left;
+    }
+
+    &__cell {
+      background: #FFFFFF;
+      font-size: 14px;
+      line-height: 18px;
+      border-bottom: 1px solid #EAEAEA;
+      width: 100%;
+      vertical-align: middle;
+      box-sizing: border-box;
+    }
+
+    &__cell:not(:last-child) {
+      padding: 23px 0 23px 23px;
+      min-width: 120px;
+    }
+
+    &__cell:last-child {
+      padding: 16px;
+    }
+
+    &__sent {
+      height: 32px;
+      width: 119px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #FF3E79;
+      border-radius: 16px;
+
+      font-size: 12px;
+      line-height: 24px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+    }
+
+    &__sent-img {
+      width: 24px;
+      height: 24px;
+      margin-left: 12px;
     }
   }
 }

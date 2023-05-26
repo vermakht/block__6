@@ -63,6 +63,9 @@
   &__txt {
     max-width: 430px;
     margin: 16px 0 16px 16px;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
   }
 
   &__btn-more {
@@ -76,6 +79,11 @@
   &__btn-text {
     display: inline;
     line-height: 24px;
+  }
+
+  &__btn-img {
+    vertical-align: middle;
+    margin-left: 5px;
   }
 
   &__navigation {
@@ -95,5 +103,9 @@
 
   &__dot--active {
     background-color: #B5B6BC;
+  }
+
+  &__table {
+    display: none;
   }
 }

@@ -11,7 +11,7 @@
     grid-area: aside;
     display: grid;
     grid-template-columns: 320px;
-    grid-template-rows: 88px minmax(0, 1fr) auto;
+    grid-template-rows: 88px minmax(676px, 1fr) auto;
     grid-template-areas:
     "aside__header"
     "aside__nav"

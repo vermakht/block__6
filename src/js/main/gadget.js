@@ -5,8 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const dotsContainer = document.querySelector('.gadget__navigation');
   const dots = document.querySelectorAll('.gadget__dot');
 
-  // Обновляем активную точку при прокрутке контейнера
-  // eslint-disable-next-line require-jsdoc
+  /** Обновляем активную точку при прокрутке контейнера */
   function updateActiveDot() {
     const scrollLeft = cardsContainer.scrollLeft;
     const visibleWidth = cardsContainer.offsetWidth;
@@ -42,7 +41,7 @@ const btnReadmore = document.getElementsByClassName('gadget--mob').item(0);
 const btnReadmoreText = document.getElementsByClassName('btn-readmore__text').item(2);
 const btnReadmoreImg = document.getElementsByClassName('btn-readmore__img').item(2);
 const brandsDekElements = document.querySelectorAll('.gadget--dev');
-const gadgetSlides = document.querySelectorAll('.gadget__container');
+const gadgetSlides = document.querySelectorAll('.gadget__slides');
 
 document.addEventListener('DOMContentLoaded', (e) => {
   btnReadmore.addEventListener('click', (e) => {

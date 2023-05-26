@@ -5,29 +5,20 @@ const servicesList = document.querySelector('.services__list');
 document.addEventListener('DOMContentLoaded', (e) => {
   servicesBtnes.forEach(function(servicesBtn) {
     servicesBtn.addEventListener('click', function(event) {
-      removeActiveClass();
+      // Убираем класс активной кнопки у всех кнопок
+      servicesBtnes.forEach(function(btn) {
+        btn.classList.remove('services__btn--active');
+      });
+      // Добавляем класс активной кнопке, на которую кликнули
       servicesBtn.classList.add('services__btn--active');
-    });
-    servicesBtn.addEventListener('mouseover', function() {
-      servicesBtn.classList.add('services__btn--active');
-    });
-    servicesBtn.addEventListener('mouseout', function() {
-      servicesBtn.classList.remove('services__btn--active');
     });
   });
-  /**
-   * Удаляем класс при закрытии меню или переходе
-   * на следующую кнопку.
-   * Возвращаем исходное оформление кнопки при наведении при закрытии меню
-   */
-  function removeActiveClass() {
-    servicesBtnes.forEach(function(servicesBtn) {
-      servicesBtn.classList.remove('services__btn--active');
-    });
-  }
-  // Добавляем класс активной кнопке при загрузке страницы
+
+  /** Добавляем класс активной кнопке при загрузке страницы.
+   * Обозначаем раздел, в котором находииться пользователь  */
   servicesBtnes[0].classList.add('services__btn--active');
-  // eslint-disable-next-line require-jsdoc
+
+  /** дабавляем перенос кнопок при определённой ширине экрна */
   function handleMediaQueryChange(mediaQuery) {
     if (mediaQuery.matches) {
       servicesList.style.flexWrap = 'wrap';
@@ -35,7 +26,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
       servicesList.style.flexWrap = 'nowrap';
     }
   }
-
   // Изменение стиля при загрузке страницы
   handleMediaQueryChange(mediaQuery);
 
